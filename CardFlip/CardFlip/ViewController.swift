@@ -10,11 +10,28 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var containerView: UIView!
+
+    lazy var backView: UIView = {
+        return createView(backgroundColor: .gray)
+    }()
+    
+    lazy var frontView: UIView = {
+        return createView(backgroundColor: .systemYellow)
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func flipView(_ sender: Any) {
+    }
+    
+    fileprivate func createView(backgroundColor: UIColor?) -> UIView {
+        let view = UIView()
+        view.backgroundColor = backgroundColor
+        return view
+    }
 }
 
